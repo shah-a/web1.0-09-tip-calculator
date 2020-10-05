@@ -5,9 +5,9 @@ const tipInput = document.querySelector("#tip");
 const peopleInput = document.querySelector("#people");
 
 function calculateTip() {
-  const billValue = Number(billInput.value);
-  const tipValue = Number(tipInput.value);
-  const numPeople = Number(peopleInput.value);
+  const billValue = parseFloat(billInput.value);
+  const tipValue = parseFloat(tipInput.value);
+  const numPeople = parseInt(peopleInput.value);
 
   const tipAmount = billValue * (tipValue/100) / numPeople;
   const totalAmount = billValue * (1 + tipValue/100);
