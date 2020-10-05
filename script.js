@@ -10,10 +10,10 @@ function calculateTip() {
   const numPeople = Number(peopleInput.value);
 
   const tipAmount = billValue * (tipValue/100) / numPeople;
-  const totalAmount = billValue + tipAmount;
+  const totalAmount = billValue * (1 + tipValue/100);
 
-  tipDisplay.innerHTML = `Tip per person: ${tipAmount.toFixed(2)}`;
-  totalDisplay.innerHTML = `Bill total: ${totalAmount.toFixed(2)}`;
+  tipDisplay.innerHTML = `${tipAmount.toFixed(2)}`;
+  totalDisplay.innerHTML = `${totalAmount.toFixed(2)}`;
 }
 
 calculateTip();
@@ -21,13 +21,3 @@ calculateTip();
 billInput.addEventListener("input", calculateTip);
 tipInput.addEventListener("input", calculateTip);
 peopleInput.addEventListener("input", calculateTip);
-
-/*
-${bill}
-${tippercent}%
-${people}
-
-${tiptotal} = ${tippercent}/100 * ${bill}
-Tip/person = ${tiptotal} / ${people}
-Total/person = ${bill}/${people} + ${tip/person}
-*/
